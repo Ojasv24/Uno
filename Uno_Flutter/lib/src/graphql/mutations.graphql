@@ -1,0 +1,29 @@
+mutation JoinGame($name: String!, $roomID: String!) {
+  join(name: $name, roomID: $roomID)
+}
+
+mutation StartGame {
+  startGame
+}
+
+mutation Move($cardId: ID!, $cardColor: Color!) {
+  move(cardId: $cardId, cardColor: $cardColor)
+}
+
+mutation PickCard {
+  pickCard
+}
+
+mutation KeepCard {
+  keepCard
+}
+
+mutation RestartGame {
+  restart
+}
+
+mutation CreateRoom {
+  createRoom {
+    id
+  }
+}

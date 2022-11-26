@@ -1,0 +1,73 @@
+enum Color {
+  RED
+  BLUE
+  YELLOW
+  GREEN
+  BLACK
+}
+
+enum CardType {
+  NUMBER_CARD
+  REVERSE_CARD
+  SKIP_CARD
+  DRAW_TWO_CARD
+  WILD_CARD
+  WILD_DRAW_FOUR_CARD
+  CHOOSE_COLOR
+}
+
+type Card {
+  id: ID!
+  number: String!
+  color: Color!
+  cardType: CardType!
+}
+
+type Player {
+  name: String!
+  cardCount: Int!
+}
+
+enum Direction {
+  FORWARD
+  BACKWARD
+}
+
+type PlayerState {
+  topcard: Card!
+  lastNumber: Int!
+  lastColor: Color!
+  players: [Player!]!
+  cards: [Card!]!
+  currentPlayer: String!
+  gameDirection: Direction!
+  validmoves: [Card!]!
+  pickCount: Int!
+  requireChoose: Boolean!
+}
+
+type Room {
+  id: ID!
+  players: [Player!]!
+  state: PlayerState # Non null if game started
+  winner: Player
+}
+
+type Mutation {
+  join(roomID: String!, name: String!): String!
+  startGame: Boolean!
+  keepCard: Boolean!
+  pickCard: Boolean!
+  restart: Boolean!
+  move(cardId: ID!, cardColor: Color): Boolean!
+  resetGame: Boolean!
+  createRoom: Room!
+}
+
+type Subscription {
+  roomState: Room!
+}
+
+type Query {
+  test: String!
+}

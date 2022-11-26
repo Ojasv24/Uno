@@ -1,0 +1,46 @@
+fragment CardFragmnet on Card {
+  id
+  number
+  color
+  cardType
+}
+
+fragment PlayerFragment on Player {
+  name
+  cardCount
+}
+
+subscription ListenState {
+  roomState {
+    id
+    players {
+      ...PlayerFragment
+    }
+    winner {
+      name
+    }
+    state {
+      topcard {
+        ...CardFragmnet
+      }
+      lastNumber
+      lastColor
+      players {
+        ...PlayerFragment
+      }
+      cards {
+        ...CardFragmnet
+      }
+      currentPlayer
+      gameDirection
+      validmoves {
+        ...CardFragmnet
+      }
+      validmoves {
+        ...CardFragmnet
+      }
+      pickCount
+      requireChoose
+    }
+  }
+}

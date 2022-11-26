@@ -1,0 +1,41 @@
+subscription ListenState {  roomState {
+      id
+    players {
+        name
+      cardCount
+    }
+    state {
+        topcard {
+          id
+        number
+        color
+        cardType
+      }
+      lastNumber
+      lastColor
+      players {
+          name
+        cardCount
+      }
+      cards {
+          ...CardFragmnet
+      }
+      currentPlayer
+      gameDirection
+      validmoves {
+          ...CardFragmnet
+      }
+      validmoves {
+          ...CardFragmnet
+      }
+      pickCount
+      requireChoose
+    }
+  }
+}
+fragment CardFragmnet on Card {
+    id
+  number
+  color
+  cardType
+}
