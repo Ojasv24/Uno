@@ -1,7 +1,7 @@
 # Uno
-A Multiplatform Real-Time Multiplayer UNO game using Flutter and Golang with GraphQL.
-Play the on:
-https://unoweb-a8cb2.web.app/#/
+A Multiplatform Real-Time Multiplayer UNO game using Flutter and Golang with GraphQL.\n
+Play the on:\n
+https://unoweb-a8cb2.web.app/#/\n
 Simply Create Room and share the ID to let your friend join.
 ![image](https://user-images.githubusercontent.com/54352866/204118832-0bd98e67-cdf9-4840-ab05-786934135706.png)
 ![image](https://user-images.githubusercontent.com/54352866/204118865-304c337a-7aa4-4cf2-bd8e-932ecdb305f6.png)
